@@ -28,7 +28,20 @@
         </main>
 
         <script>
-            console.log(document.body);
+            const student = { name: 'kissmot Ali', age: 16, height: 60 };
+            // console.log(document.body);
+
+            // const blogTitles = ['h3', 'h3'];
+            const blogTitles = document.getElementsByTagName('h3');
+
+            for (const h3 of blogTitles) {
+                console.log(h3.innerText);
+            }
+
+            const blogDetails = document.getElementsByTagName('p');
+            for (const p of blogDetails) {
+                console.log(p);
+            }
         </script>
     </body>
 </html>

@@ -5,6 +5,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
+        <style>
+            /* #second-title {
+                background-color: blueviolet;
+            } */
+        </style>
     </head>
     <body>
         <header>
@@ -17,11 +22,15 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi consequatur earum vitae aliquid doloribus at facilis omnis veritatis perferendis id, eligendi non molestias ipsa et. Ab quis perferendis iusto labore!</p>
                 </article>
                 <article>
-                    <h3>My Awesome Blog-2</h3>
+                    <h3 id="second-title">My Awesome Blog-2</h3>
                     <p>Maiores quibusdam eaque impedit dolores sit. Labore repellendus aliquam rerum eaque quibusdam maiores voluptatibus doloremque quidem nobis fuga porro corrupti voluptatum, repudiandae qui itaque tempora, eius libero voluptates repellat expedita?</p>
                 </article>
                 <article>
-                    <h3>My Awesome Blog-3</h3>
+                    <h3 id="third-title">My Awesome Blog-3</h3>
+                    <p>Aliquam fugit omnis odit ut maiores atque. Vero, modi perspiciatis fugiat porro quaerat error laudantium numquam. Quas praesentium aspernatur, placeat debitis animi quis soluta voluptatum aperiam qui sed amet perspiciatis.</p>
+                </article>
+                <article>
+                    <h3 id="forth-title">My Awesome Blog-3</h3>
                     <p>Aliquam fugit omnis odit ut maiores atque. Vero, modi perspiciatis fugiat porro quaerat error laudantium numquam. Quas praesentium aspernatur, placeat debitis animi quis soluta voluptatum aperiam qui sed amet perspiciatis.</p>
                 </article>
             </section>
@@ -35,13 +44,22 @@
             const blogTitles = document.getElementsByTagName('h3');
 
             for (const h3 of blogTitles) {
-                console.log(h3.innerText);
+                // console.log(h3.innerText);
             }
 
             const blogDetails = document.getElementsByTagName('p');
             for (const p of blogDetails) {
-                console.log(p);
+                // console.log(p.innerText);
             }
+
+            const secondTitle = document.getElementById('second-title');
+            secondTitle.style.textAlign = 'center';
+
+            const third = document.getElementById('third-title');
+            third.innerText = 'Title updated by JS';
+            third.style.backgroundColor = 'salmon';
+            third.style.padding = '10px';
+            third.style.marginLeft = '20px';
         </script>
     </body>
 </html>

@@ -9,27 +9,34 @@
             /* #second-title {
                 background-color: blueviolet;
             } */
+            /* .blog {
+                border: 2px solid orange;
+                margin: 5px;
+                padding: 5px;
+                border-radius: 10px;
+            } */
         </style>
     </head>
+    class=""
     <body>
         <header>
             <h1>welcome to my blog website</h1>
         </header>
         <main>
-            <section>
-                <article>
+            <section class="blogs">
+                <article class="blog" blog>
                     <h3>My Awesome Blog-1</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi consequatur earum vitae aliquid doloribus at facilis omnis veritatis perferendis id, eligendi non molestias ipsa et. Ab quis perferendis iusto labore!</p>
                 </article>
-                <article>
+                <article id="second-blog" class="blog">
                     <h3 id="second-title">My Awesome Blog-2</h3>
                     <p>Maiores quibusdam eaque impedit dolores sit. Labore repellendus aliquam rerum eaque quibusdam maiores voluptatibus doloremque quidem nobis fuga porro corrupti voluptatum, repudiandae qui itaque tempora, eius libero voluptates repellat expedita?</p>
                 </article>
-                <article>
+                <article class="blog">
                     <h3 id="third-title">My Awesome Blog-3</h3>
                     <p>Aliquam fugit omnis odit ut maiores atque. Vero, modi perspiciatis fugiat porro quaerat error laudantium numquam. Quas praesentium aspernatur, placeat debitis animi quis soluta voluptatum aperiam qui sed amet perspiciatis.</p>
                 </article>
-                <article>
+                <article class="blog">
                     <h3 id="forth-title">My Awesome Blog-3</h3>
                     <p>Aliquam fugit omnis odit ut maiores atque. Vero, modi perspiciatis fugiat porro quaerat error laudantium numquam. Quas praesentium aspernatur, placeat debitis animi quis soluta voluptatum aperiam qui sed amet perspiciatis.</p>
                 </article>
@@ -63,6 +70,19 @@
             third.style.backgroundColor = 'salmon';
             third.style.padding = '10px';
             third.style.marginLeft = '20px';
+
+            // 23-6 Explore getElementsByClassName and querySelectorAll
+
+            // create and add element by using JS
+            // create the element
+
+            const blogs = document.getElementsByClassName('blog');
+            for (const blog of blogs) {
+                blog.style.border = '2px solid orange';
+                blog.style.borderRadius = '10px';
+                blog.style.margin = '5px';
+                blog.style.padding = '5px';
+            }
         </script>
     </body>
 </html>

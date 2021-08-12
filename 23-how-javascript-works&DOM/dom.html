@@ -23,7 +23,16 @@
             <h1>welcome to my blog website</h1>
         </header>
         <main>
-            <section class="blogs">
+            <section id="blogs" class="blogs">
+                <header>
+                    <h2>blogs list</h2>
+                    <ul id="blog-list">
+                        <li>Blog-1</li>
+                        <li>Blog-2</li>
+                        <li>Blog-3</li>
+                        <li>Blog-4</li>
+                    </ul>
+                </header>
                 <article class="blog" blog>
                     <h3>My Awesome Blog-1</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi consequatur earum vitae aliquid doloribus at facilis omnis veritatis perferendis id, eligendi non molestias ipsa et. Ab quis perferendis iusto labore!</p>
@@ -70,6 +79,39 @@
             third.style.backgroundColor = 'salmon';
             third.style.padding = '10px';
             third.style.marginLeft = '20px';
+
+            //23-8 Create HTML elements using Javascript and appendChild
+
+            // create and add element by using JS
+            // create the element
+            const li = document.createElement('li');
+            li.innerText = 'Blog-5';
+            //where to add
+            const ul = document.getElementById('blog-list');
+
+            //append new element
+
+            ul.appendChild(li);
+
+            //add article
+            const article = document.createElement('article');
+            article.classList.add('blog');
+
+            // const h3 = document.createElement('h3');
+            // h3.innerText = 'My Awesome Blog-5';
+            // const p = document.createElement('p');
+            // p.innerText = 'Vitae a error culpa quas quos tempora. Ipsa iusto, nostrum inventore cupiditate molestiae dolorum!';
+            // article.appendChild(h3);
+            // article.appendChild(p);
+
+            article.innerHTML = `
+                <h3>My Awesome Blog-5</h3>
+            <p>Vitae a error culpa quas quos tempora. Ipsa iusto, nostrum inventore cupiditate molestiae dolorum!</p>
+            `;
+
+            //parent of article
+            const blogSection = document.getElementById('blogs');
+            blogSection.appendChild(article);
 
             // 23-6 Explore getElementsByClassName and querySelectorAll
 

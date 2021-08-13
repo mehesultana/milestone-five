@@ -46,6 +46,23 @@
                     deleteBtn.setAttribute('disabled', true);
                 }
             });
+
+            //change
+            document.getElementById('delete-confirm').addEventListener('change', function () {
+                const deleteField = document.getElementById('delete-confirm');
+                console.log(deleteField.value);
+            });
+
+            function toggleDeleteButton(event) {
+                const deleteBtn = document.getElementById('delete-btn');
+                if (event.target.value == 'delete') {
+                    deleteBtn.removeAttribute('disabled');
+                } else {
+                    deleteBtn.setAttribute('disabled', true);
+                }
+            }
+            document.getElementById('delete-confirm').addEventListener('keyup', toggleDeleteButton);
+            addEventListener('change', toggleDeleteButton);
         </script>
     </body>
 </html>

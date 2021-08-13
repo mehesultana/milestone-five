@@ -1,0 +1,43 @@
+<!-- 24-8 (advanced) Event delegate and benefit of Event bubble -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Event delegate</title>
+    </head>
+    <body>
+        <h2>Event delegate</h2>
+        <ul id="item-container">
+            <li class="item">Lorem, ipsum.</li>
+            <li class="item">Tempora, illo!</li>
+            <li class="item">Cupiditate, esse.</li>
+            <li class="item">Consectetur, nam?</li>
+            <li class="item">Veritatis, magnam.</li>
+            <li class="item">Dolorem, incidunt.</li>
+        </ul>
+        <button id="add-item">Add Item</button>
+        <script>
+            const items = document.getElementsByClassName('item');
+            for (const item of items) {
+                item.addEventListener('click', function (event) {
+                    // document.getElementById('item-container').removeChild(item);
+                    event.target.parentNode.removeChild(event.target);
+                });
+            }
+
+            document.getElementById('add-item').addEventListener('click', function () {
+                const li = document.createElement('li');
+                li.innerText = 'Brand New Item';
+                li.classList.add('item');
+                const parent = document.getElementById('item-container');
+                parent.appendChild(li);
+            });
+
+            document.getElementById('item-container').addEventListener('click', function (event) {
+                event.target.parentNode.removeChild(event.target);
+            });
+        </script>
+    </body>
+</html>

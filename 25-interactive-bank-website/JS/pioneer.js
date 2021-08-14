@@ -18,9 +18,11 @@ depositBtn.addEventListener('click', function () {
 
     document.getElementById('depositAmount').value = '';
 });
+
+//withdraw  button event handler
 function updateSpanText(id, depositNumber) {
-    const currentBalance = document.getElementById(id).innerText;
-    const cucurrentBalanceNumber = parseFloat(currentBalance);
-    const totalBalance = depositNumber + cucurrentBalanceNumber;
-    document.getElementById(id).innerText = totalBalance;
+    const current = document.getElementById(id).innerText;
+    const cucurrentNumber = parseFloat(current);
+    const totalAmount = depositNumber + cucurrentNumber;
+    document.getElementById(id).innerText = totalAmount;
 }

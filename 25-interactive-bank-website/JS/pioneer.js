@@ -20,6 +20,16 @@ depositBtn.addEventListener('click', function () {
 });
 
 //withdraw  button event handler
+const withdrawBtn = document.getElementById('addWithdraw');
+withdrawBtn.addEventListener('click', function () {
+    const withdrawNumber = getInputNumber('withdrawAmount');
+});
+
+function getInputNumber() {
+    const withdrawAmount = document.getElementById('withdrawAmount').value;
+    const withdrawNumber = parseFloat(withdrawNumber);
+}
+
 function updateSpanText(id, depositNumber) {
     const current = document.getElementById(id).innerText;
     const cucurrentNumber = parseFloat(current);

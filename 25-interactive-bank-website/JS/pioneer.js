@@ -13,18 +13,14 @@ depositBtn.addEventListener('click', function () {
     const depositAmount = document.getElementById('depositAmount').value;
     const depositNumber = parseFloat(depositAmount);
 
-    const currentDeposit = document.getElementById('currentDeposit').innerText;
-    const currentDepositNumber = parseFloat(currentDeposit);
-    const totalDeposit = depositNumber + currentDepositNumber;
+    updateSpanText('currentDeposit', depositNumber);
+    updateSpanText('currentBalance', depositNumber);
 
-    document.getElementById('currentDeposit').innerText = totalDeposit;
-
-    const currentBalance = document.getElementById('currentBalance').innerText;
+    document.getElementById('depositAmount').value = '';
+});
+function updateSpanText(id, depositNumber) {
+    const currentBalance = document.getElementById(id).innerText;
     const cucurrentBalanceNumber = parseFloat(currentBalance);
     const totalBalance = depositNumber + cucurrentBalanceNumber;
-    document.getElementById('currentBalance').innerText = totalBalance;
-
-    document.getElementById(depositAmount).value = '';
-});
-
-function updateSpanText(id) {}
+    document.getElementById(id).innerText = totalBalance;
+}

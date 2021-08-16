@@ -16,6 +16,14 @@ function getInputValue(inputId) {
     return amountValue;
 }
 
+function updateTotalField(totalFieldId, depositAmount) {
+    const depositTotal = document.getElementById(totalFieldId);
+    const depositTotalText = depositTotal.innerText;
+    const previousDepositTotal = parseFloat(depositTotalText);
+
+    depositTotal.innerText = previousDepositTotal + depositAmount;
+}
+
 document.getElementById('deposit-button').addEventListener('click', function () {
     // console.log('deposit button clicked');
     // const depositInput = document.getElementById('deposit-input');
@@ -25,13 +33,15 @@ document.getElementById('deposit-button').addEventListener('click', function () 
 
     const depositAmount = getInputValue('deposit-input');
 
-    //get current deposit
-    const depositTotal = document.getElementById('deposit-total');
-    const depositTotalText = depositTotal.innerText;
-    const previousDepositTotal = parseFloat(depositTotalText);
+    //get and update deposit total
+    // const depositTotal = document.getElementById('deposit-total');
+    // const depositTotalText = depositTotal.innerText;
+    // const previousDepositTotal = parseFloat(depositTotalText);
 
-    depositTotal.innerText = previousDepositTotal + depositAmount;
+    // depositTotal.innerText = previousDepositTotal + depositAmount;
     // console.log(depositTotalText);
+
+    updateTotalField('deposit-total', depositAmount);
 
     //update balance
     const balanceTotal = document.getElementById('balance-total');
